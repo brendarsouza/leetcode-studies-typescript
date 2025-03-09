@@ -1,0 +1,85 @@
+Goal
+You have to list all the gene combinations of two parents, from their blood type and the blood type of one of their children.
+
+Description
+Each person has two blood genes, each of them can be A, B or O
+You do not directly know which person has which genes, but you know their phenotypes (the apparent expression of the genes). The phenotype can be: A, B, AB or O
+
+Here are the correspondences between blood genes and phenotype:
+• When the two genes of a person are both "A", the phenotype is "A".
+• When the genes are both "B", the phenotype is "B".
+• When the genes are both "O", the phenotype is "O".
+• When one gene is "A" and the other is "B", the phenotype is "AB".
+• When one gene is "A" and the other is "O", the phenotype is "A".
+• When one gene is "B" and the other is "O", the phenotype is "B".
+
+Options:
+
+AA = A
+AB = AB
+AO = A
+BA = AB
+BB = B
+BO = B
+OA = A
+OB = B
+OO = O
+
+
+
+A child gets one of the blood genes from their first parent, and the other one from their second parent. The genes are randomly chosen.
+You are given the phenotypes of three persons: first parent, second parent, and one of their children.
+
+Output a list, containing all the possible blood gene combinations of the parents.
+
+Each element of the list is a sub-list of two strings, containing the blood genes of the first and second parent, in that order.
+
+When there is no possible combination, output a list containing only one element: a sub-list of two strings, both equal to "--" (two hyphens).
+Since the order of genes is not important inside one person, you do not have to describe "BO or OB".
+So, each string will always have one of the following values: AA, BB, AB, AO, BO, OO, --.
+
+The elements in the main list must be alphabetically sorted by the first parent genes, then by the second parent genes.
+
+Example 1
+You get these values in input:
+parent_1 = "AB"
+parent_2 = "A"
+child = "A"
+
+• The phenotype of the first parent is "AB", so the blood genes are "AB" (only one possible value).
+• The phenotype of the second parent is "A", so the blood genes can be "AA" or "AO".
+
+The first parent combination is ["AB", "AA"]. Each of the parents can give a blood gene "A" to the child. 
+The child would have the phenotype "A". It is possible.
+
+The second parent combination is ['AB", "AO"]. The first parent can give the blood gene "A", the second one can give any of the blood genes. The child would have the blood genes "AA" or "AO", in both cases it results in the phenotype "A". It is possible.
+
+You have to output the following value: [ ["АВ", "АА"],["AB","AO"] ]
+
+Example 2
+You get these values in input:
+parent_1 = "O"
+parent_2 = "AB"
+child = "0"
+
+• The phenotype of the first parent is "O", so the blood genes are "OO" (only one possible value).
+• The phenotype of the second parent is "AB", so the blood genes are "AB" (only one possible value).
+The first parent always gives a blood gene "O" to the child, the second one gives either an "A" or a "B".
+
+In the first case, the blood genes of the child would be "AO", which results in the phenotype "A". In the second case, the blood genes would be "BO", which results in the phenotype "B".
+
+But the child has the phenotype "O". So it is impossible.
+
+You have to output the following value: [["--"],["--"]]
+
+
+Example 1
+
+Parameters
+• AB
+• A
+• A
+
+Return Value
+(1) ["AB", "AA" ]
+(2) ["AB", "AO"]

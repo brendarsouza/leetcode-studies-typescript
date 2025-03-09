@@ -1,0 +1,20 @@
+ /**
+   * 
+   * Implement the function findLargest (numbers), so it returns the largest number from the array numbers
+      Notes:
+      numbers contains only integers.
+      numbers always contains at least one element, and never contains more than 10 elements.
+      • The integers are ranged from -2^31 to +2^31 - 1 (they always fit in a 32-bit
+      signed integer).
+   * @param nums 
+      
+      Test Cases      
+      1 Array of positives [42, 10, 75, 3], expect return 75
+      2 Array of negatives [-42, -19, -123, -1337], expect return -1337
+   */
+   Code
+  public largestNumber(nums: number[]) {
+    console.log(Math.max(...nums))
+    return Math.max(...nums)
+    
+  };

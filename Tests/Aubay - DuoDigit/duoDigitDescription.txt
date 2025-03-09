@@ -1,0 +1,17 @@
+Goal:
+We call an integer a "duodigit" if its decimal representation uses no more than two different digits. For example, [12 is a duodigit, but 102] is not.
+Implement the function isDuoDigit (number) which returns a string:
+- y if number is a duodigit,
+- n otherwise.
+
+Examples:
+These numbers are duodigits:
+12
+110
+-37333
+1
+2020
+
+These numbers are not duodigits:
+102
+-2021
